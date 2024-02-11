@@ -17,6 +17,9 @@ player1 = player.Player(100, 100, (255, 0, 0))
 player2 = player.Player(screenWidth - 100, screenHeight - 100, (0, 0, 255))
 mainCore = core.Core(int(screenWidth / 2), int(screenHeight / 2), 5)
 
+
+
+
 enemies = pygame.sprite.Group()
 
 # what is

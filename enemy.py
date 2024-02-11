@@ -1,6 +1,8 @@
 import pygame
 import math
 
+scoreNum = 0
+
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, x, y, speed, color):
         super(Enemy, self).__init__()

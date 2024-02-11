@@ -34,5 +34,6 @@ class Player(pygame.sprite.Sprite):
 
     def attack(self, otherPlayer, enemies):
         for enemy in enemies:
-            if enemy.rect.clipline(self.rect.centerx ,otherPlayer.rect.centerx, self.rect.centery, otherPlayer.rect.centery):
+            if enemy.rect.clipline((self.rect.centerx ,self.rect.centery), (otherPlayer.rect.centerx, otherPlayer.rect.centery)):
+                print("Enemy damage done")
                 enemy.takeDamage()

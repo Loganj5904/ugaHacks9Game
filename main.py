@@ -2,8 +2,10 @@ import pygame
 from universal import *
 from pygame.locals import (RLEACCEL, K_ESCAPE, KEYDOWN, K_UP, K_DOWN, K_LEFT, K_RIGHT, K_w, K_a, K_s, K_d, K_SPACE, K_RSHIFT)
 import effects
+from enemy import scoreNum
 
 pygame.init()
+
 
 def main():
     
@@ -17,7 +19,14 @@ def main():
     sprites.add(player2)
     sprites.add(mainCore)
 
+
+    score_font = pygame.font.Font("ComicSansMS3.ttf", 10)
+    score = score_font.render( ("Score: " + str(scoreNum)), False, (0, 0, 0) )
+
+    
+
     while gameLoop:
+
 
         effectGroup = pygame.sprite.Group()
 
@@ -37,6 +46,7 @@ def main():
             lineEffect.surf.set_colorkey((0, 0, 0))
             pygame.draw.line(lineEffect.surf, (255, 128, 255), (player1.rect.centerx, player1.rect.centery), (player2.rect.centerx, player2.rect.centery))
             player1.attack(player2, enemies)
+
             effectGroup.add(lineEffect)
 
         for effect in effectGroup:
